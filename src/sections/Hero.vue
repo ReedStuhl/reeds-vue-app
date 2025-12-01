@@ -5,6 +5,7 @@
       <p class="text-xl opacity-80">Engineer • Problem Solver • Builder</p>
       <button
         class="mt-6 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
+        @click="scrollToWork"
       >
         View My Work
       </button>
@@ -12,4 +13,10 @@
   </section>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const scrollToWork = () => {
+  const el = document.getElementById('work');
+  el?.scrollIntoView({ behavior: 'smooth' });
+};
+</script>
+

@@ -1,5 +1,5 @@
 <template>
-  <section
+  <section id="work"
     class="min-h-screen w-full snap-start p-8 flex flex-col justify-center items-center"
   >
     <h2 class="text-4xl font-semibold mb-6 text-center">Work</h2>
