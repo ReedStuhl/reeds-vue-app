@@ -15,8 +15,7 @@
 
 <script lang="ts" setup>
 const scrollToWork = () => {
-  const el = document.getElementById('work');
-  el?.scrollIntoView({ behavior: 'smooth' });
+  const el = document.getElementById("work");
+  el?.scrollIntoView({ behavior: "smooth" });
 };
 </script>
-

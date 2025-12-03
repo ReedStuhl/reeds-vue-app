@@ -11,7 +11,7 @@ export const projects: Project[] = [
     title: "Bitcoin Forcasting",
     description:
       "During my time at JCU, my team implemented a predictive model for stock market price forecasting, leveraging Kaggle data. We successfully trained an LSTM network using Keras, supported by Pandas, NumPy, and scikit-learn (sklearn). We also ran a baseline Random Forest model. The results and data analysis were visualized using the matplotlib library.",
-    url: "https://github.com/ReedStuhl/machine-learning",
+    url: "https://github.com/ReedStuhl",
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "NFT Blog",
+    title: "Tech Blog",
     description:
       "My blog captured the excitement of the NFT boom through the lens of owning a Zed Run racehorse. The posts served as a guide, detailing my experiences with purchasing crypto, using OpenSea, transferring blockchain assets, and exploring the role of Decentralized Apps (DApps) in the play-to-earn economy.",
     url: "https://fungibleblog.blogspot.com",
