@@ -10,7 +10,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Bitcoin Forcasting",
     description:
-      "During my time at JCU, my team implemented a predictive model for stock market price forecasting, leveraging Kaggle data. We successfully trained an LSTM network using Keras, supported by Pandas, NumPy, and scikit-learn (sklearn). We also ran a baseline Random Forest model. The results and data analysis were visualized using the matplotlib library.",
+      "Developed a modern Bitcoin price-forecasting tool using PyTorch, implementing an LSTM-based neural network for short-term time-series prediction. The project includes a fully refactored data pipeline (feature engineering, scaling, and sequence generation), modular training and inference workflows, and configurable model parameters. Results are evaluated against baseline models and visualized through Python-based analytics to demonstrate forecasting accuracy and performance.",
     url: "https://github.com/ReedStuhl",
   },
   {
