@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen overflow-y-scroll snap-y snap-mandatory relative">
+  <div class="no-scrollbar w-full h-dvh overflow-y-scroll snap-y snap-mandatory relative">
     <DarkModeToggle class="fixed top-6 left-6 z-50" />
     <NavDots />
     <Section id="hero"><Hero /></Section>

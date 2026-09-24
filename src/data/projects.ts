@@ -8,10 +8,10 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Bitcoin Forcasting",
+    title: "Bitcoin Forecasting",
     description:
       "Developed a modern Bitcoin price-forecasting tool using PyTorch, implementing an LSTM-based neural network for short-term time-series prediction. The project includes a fully refactored data pipeline (feature engineering, scaling, and sequence generation), modular training and inference workflows, and configurable model parameters. Results are evaluated against baseline models and visualized through Python-based analytics to demonstrate forecasting accuracy and performance.",
-    url: "https://github.com/ReedStuhl",
+    url: "https://github.com/ReedStuhl/pytorch-bitcoin-lstm",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Capstone Project",
+    title: "Affordhealth.org",
     description:
       "As a Frontend React Developer for Affordhealth.org, I specialized in building highly reusable and modular functional components using TypeScript. I also integrated our component library with Storybook, which was crucial for streamlined User Acceptance Testing (UAT).",
     url: "https://www.affordhealth.org",

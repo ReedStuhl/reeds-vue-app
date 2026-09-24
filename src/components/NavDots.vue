@@ -7,9 +7,11 @@
       :key="section.id"
       @click="scrollToSection(section.id)"
       :class="[
-        'w-4 h-4 rounded-full border transition',
-        currentSection === section.id ? 'bg-black' : 'bg-white',
+        'w-4 h-4 rounded-full border border-black/30 dark:border-white/30 transition',
+        currentSection === section.id ? 'bg-black dark:bg-white' : 'bg-white dark:bg-gray-700',
       ]"
+      :aria-label="`Go to ${section.id} section`"
+      :aria-current="currentSection === section.id ? 'true' : undefined"
     ></button>
   </div>
 </template>
