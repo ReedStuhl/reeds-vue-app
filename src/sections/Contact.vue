@@ -1,11 +1,7 @@
 <template>
   <section class="w-full h-full flex items-center justify-center p-6 sm:p-8">
     <div class="max-w-xl text-center space-y-6">
-      <h2 class="text-4xl font-semibold">Contact</h2>
-
-      <p class="opacity-80 text-lg">
-        Open to new opportunities and always happy to talk shop — reach out anytime.
-      </p>
+      <h2 class="text-4xl font-semibold">Always happy to connect</h2>
 
       <!-- Email link -->
       <a

@@ -4,7 +4,7 @@
 
     <div
       ref="carousel"
-      class="w-full max-w-md min-h-0 flex-1 overflow-x-auto snap-x snap-mandatory flex space-x-6 hide-scrollbar scroll-smooth"
+      class="w-full max-w-md min-h-0 flex-1 md:flex-none overflow-x-auto snap-x snap-mandatory flex space-x-6 hide-scrollbar scroll-smooth"
     >
       <div
         v-for="project in projects"

@@ -13,8 +13,9 @@
         <span class="flip-card-face flex flex-col items-center text-center">
           <h2 class="text-4xl font-semibold mb-4">About Me</h2>
           <p class="opacity-80 text-lg">
-            I build clean, reliable, and scalable software with a strong focus on
-            user experience and efficient engineering.
+            I turn complex, data driven problems into systems that work and adapt
+            quickly as the tools evolve. Lately that means pushing the limits of AI 
+            and turning each new capability into real, practical workflows.
           </p>
           <span class="mt-6 text-sm opacity-50">Tap to see my background →</span>
         </span>
@@ -23,17 +24,15 @@
         <span class="flip-card-face flip-card-back flex flex-col items-center text-center">
           <h2 class="text-4xl font-semibold mb-4">Background</h2>
           <p class="opacity-80 text-lg">
-            B.S. in Computer Science, minor in Data Science, from John Carroll
-            University — a private Jesuit university in Cleveland. The past
-            three years have gone into building a career in software
-            development, specializing in enterprise integrations at SaaS
-            companies and focusing on efficient, scalable solutions that help
-            businesses connect and grow.
+            I earned a B.S. in Computer Science with a minor in Data Science from
+            John Carroll University in Cleveland while competing in NCAA
+            lacrosse all four years. Balancing both built the discipline and
+            resilience I still bring to every challenge.
           </p>
           <p class="opacity-80 text-lg mt-4">
-            Before that: four years as a student-athlete playing lacrosse at
-            JCU — discipline, resilience, and teamwork that still shape how I
-            lead, collaborate under pressure, and push through hard problems.
+            Since graduating, I've grown from developer to consultant in
+            enterprise technology, taking ownership of complex projects from
+            first conversation to final delivery.
           </p>
           <span class="mt-6 text-sm opacity-50">← Tap to go back</span>
         </span>

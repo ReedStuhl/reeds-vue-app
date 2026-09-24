@@ -1,6 +1,6 @@
 <template>
   <section
-    class="w-screen h-dvh snap-start flex items-center justify-center p-6 sm:p-8"
+    class="w-full h-dvh snap-start flex items-center justify-center p-6 sm:p-8"
   >
     <slot />
   </section>
