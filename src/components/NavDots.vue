@@ -10,7 +10,7 @@
         'w-4 h-4 rounded-full border border-black/30 dark:border-white/30 transition',
         currentSection === section.id ? 'bg-black dark:bg-white' : 'bg-white dark:bg-gray-700',
       ]"
-      :aria-label="`Go to ${section.id} section`"
+      :aria-label="`Go to ${section.label} section`"
       :aria-current="currentSection === section.id ? 'true' : undefined"
     ></button>
   </div>
@@ -21,14 +21,15 @@ import { ref, onMounted, onUnmounted } from "vue";
 
 interface Section {
   id: string;
+  label: string;
 }
 
 const sections: Section[] = [
-  { id: "hero" },
-  { id: "about" },
-  { id: "work" },
-  { id: "skills" },
-  { id: "contact" },
+  { id: "hero", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "work", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "contact", label: "Contact" },
 ];
 
 const currentSection = ref("hero");

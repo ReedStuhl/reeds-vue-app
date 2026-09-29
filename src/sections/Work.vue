@@ -1,6 +1,6 @@
 <template>
   <section class="w-full h-full flex flex-col justify-center items-center p-6 sm:p-8">
-    <h2 class="text-4xl font-semibold mb-4 sm:mb-6 text-center">Work</h2>
+    <h2 class="text-4xl font-semibold mb-4 sm:mb-6 text-center">Projects</h2>
 
     <div
       ref="carousel"
