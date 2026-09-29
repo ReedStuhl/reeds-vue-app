@@ -11,7 +11,7 @@ export const projects: Project[] = [
     title: "Magnificent 7 Forecasting",
     description:
       "This is a fun iteration and rebuild of a project I created as a senior in college. It's an ongoing project, with new features and analysis actively being added. Using PyTorch, a deep learning framework, it trains an LSTM, a type of neural network built for sequential data like time series, to forecast stock market prices for the \"Mag 7.\" Check it out. I've now built an interactive frontend for it.",
-    url: "https://web-gamma-kohl-59.vercel.app",
+    url: "https://magnificent-forecast.vercel.app",
   },
   {
     id: 2,
