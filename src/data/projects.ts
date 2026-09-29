@@ -17,7 +17,7 @@ export const projects: Project[] = [
     id: 2,
     title: "Salesforce Trailblazer",
     description:
-      "Building on my experience as a Salesforce and Mulesoft Developer at Ford, I've actively expanded my proficiency by earning numerous Salesforce badges and certifications. I have a genuine passion for technology adoption and am driven by the opportunity to continually improve my knowledge and expertise.",
+      "A Salesforce Ranger with 120+ Trailhead badges and over 51,000 points earned across 25 trails, including a certification in MuleSoft Integration Foundations and a completed Business Administration Specialist superbadge. Driven by hands on platform experience, not just credentials.",
     url: "https://trailblazer.me/id/rstuhlreyer",
   },
   {
