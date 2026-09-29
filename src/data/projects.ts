@@ -8,10 +8,10 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Bitcoin Forecasting",
+    title: "Magnificent 7 Forecasting",
     description:
-      "Developed a modern Bitcoin price-forecasting tool using PyTorch, implementing an LSTM-based neural network for short-term time-series prediction. The project includes a fully refactored data pipeline (feature engineering, scaling, and sequence generation), modular training and inference workflows, and configurable model parameters. Results are evaluated against baseline models and visualized through Python-based analytics to demonstrate forecasting accuracy and performance.",
-    url: "https://github.com/ReedStuhl/pytorch-bitcoin-lstm",
+      "An interactive PyTorch LSTM tool that forecasts prices for the Magnificent 7 stocks over the coming week, evaluated transparently against a naive baseline instead of just showcasing its own numbers, including the weeks it loses. Originally built as a project during my senior year of college, it has since been completely rebuilt and remains an evolving project, with new features and analysis actively being added.",
+    url: "https://web-gamma-kohl-59.vercel.app",
   },
   {
     id: 2,
