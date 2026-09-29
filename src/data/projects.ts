@@ -10,7 +10,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Magnificent 7 Forecasting",
     description:
-      "This is a fun iteration and rebuild of a project I created as a senior in college. It's a machine learning algorithm that attempts to predict future stock market prices for the \"Mag 7.\" Back in 2021, the original version was built with TensorFlow, one of the standard tools for this kind of work at the time. Today it runs on PyTorch instead, reflecting how much the machine learning tooling landscape has shifted in just a few years.",
+      "This is a fun iteration and rebuild of a project I created as a senior in college. It's an ongoing project, with new features and analysis actively being added. Using PyTorch, a deep learning framework, it trains an LSTM, a type of neural network built for sequential data like time series, to forecast stock market prices for the \"Mag 7.\" Check it out. I've now built an interactive frontend for it.",
     url: "https://web-gamma-kohl-59.vercel.app",
   },
   {
