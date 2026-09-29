@@ -10,7 +10,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Magnificent 7 Forecasting",
     description:
-      "An interactive PyTorch LSTM tool that forecasts prices for the Magnificent 7 stocks over the coming week, evaluated transparently against a naive baseline instead of just showcasing its own numbers, including the weeks it loses. Originally built as a project during my senior year of college, it has since been completely rebuilt and remains an evolving project, with new features and analysis actively being added.",
+      "Originally built as a project during my senior year of college, it has since been redesigned into an ongoing interactive machine learning project, with new features and analysis actively being added. Using PyTorch, a deep learning framework, it trains an LSTM, a type of neural network built for sequential data like time series, to forecast prices for the Magnificent 7 stocks over the coming week. Results are shown transparently against a naive baseline instead of just showcasing the model's own numbers, including the weeks it loses.",
     url: "https://web-gamma-kohl-59.vercel.app",
   },
   {
