@@ -8,9 +8,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Apple Watch Health Scores",
+    title: "Claude Health & Fitness Skill",
     description:
-      "A custom Claude Skill I built that turns raw Apple Health and Apple Watch data (HRV, resting heart rate, sleep stages, VO2 max) into the kind of daily Recovery, Readiness, Day Strain, Cardio fitness age, and Resilience scores you'd normally find on a dedicated health tracker, plus a visual report you can read, print, or email. Free to download and install from GitHub.",
+      "A custom Claude Skill that turns your Apple Health and Apple Watch data into the popular competitor metrics you'd normally need a dedicated tracker for: Recovery score, Readiness score, Day Strain, Cardio fitness age, Resilience, plus a visual report you can view, download, or email to yourself. View an example report, or download the skill and try it yourself on GitHub.",
     url: "https://github.com/ReedStuhl/apple-watch-health-scores",
   },
   {
