@@ -51,14 +51,21 @@ import { projects } from "@/data/projects";
 
 const carousel = ref<HTMLDivElement | null>(null);
 
-// Scroll one card width at a time
+// Scroll one card width at a time, looping around at either end
 const scroll = (direction: number) => {
   if (!carousel.value) return;
   const card = carousel.value.querySelector<HTMLElement>(".snap-center");
   if (!card) return;
   const cardWidth =
-    card.offsetWidth + parseInt(getComputedStyle(card).marginRight);
-  carousel.value.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
+    card.offsetWidth + parseInt(getComputedStyle(card).marginLeft || "0");
+
+  const lastIndex = projects.length - 1;
+  const currentIndex = Math.round(carousel.value.scrollLeft / cardWidth);
+  let nextIndex = currentIndex + direction;
+  if (nextIndex < 0) nextIndex = lastIndex;
+  else if (nextIndex > lastIndex) nextIndex = 0;
+
+  carousel.value.scrollTo({ left: nextIndex * cardWidth, behavior: "smooth" });
 };
 </script>
 
