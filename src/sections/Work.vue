@@ -49,7 +49,7 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick, onMounted, ref } from "vue";
+import { nextTick, onMounted, onUnmounted, ref } from "vue";
 import { projects } from "@/data/projects";
 
 const carousel = ref<HTMLDivElement | null>(null);
@@ -127,6 +127,20 @@ const nearestIndex = () => {
   return closest;
 };
 
+// If the landing index is a cloned edge card, jump instantly (no animation)
+// to the matching real card so the next move can keep going the same way.
+const resolveWrap = (index: number) => {
+  if (index === 0) {
+    currentIndex = lastRealIndex;
+    jumpTo(currentIndex);
+  } else if (index === loopProjects.length - 1) {
+    currentIndex = firstRealIndex;
+    jumpTo(currentIndex);
+  } else {
+    currentIndex = index;
+  }
+};
+
 const scroll = async (direction: number) => {
   if (isAnimating.value || !carousel.value) return;
   currentIndex = nearestIndex();
@@ -136,21 +150,30 @@ const scroll = async (direction: number) => {
 
   isAnimating.value = true;
   await animateScrollTo(cardLeft(card));
-
-  if (targetIndex === 0) {
-    currentIndex = lastRealIndex;
-    jumpTo(currentIndex);
-  } else if (targetIndex === loopProjects.length - 1) {
-    currentIndex = firstRealIndex;
-    jumpTo(currentIndex);
-  } else {
-    currentIndex = targetIndex;
-  }
+  resolveWrap(targetIndex);
   isAnimating.value = false;
+};
+
+// Touch swipes scroll natively (no JS drives them), so there's no target
+// index to await the way the buttons have. Instead, wait for the browser's
+// momentum/snap to settle, then check whether it landed on a cloned edge
+// card and silently correct to the matching real card — same trick as
+// resolveWrap, just triggered by scroll settling instead of a click.
+let settleTimer: ReturnType<typeof setTimeout> | undefined;
+const handleScroll = () => {
+  if (isAnimating.value) return;
+  clearTimeout(settleTimer);
+  settleTimer = setTimeout(() => resolveWrap(nearestIndex()), 150);
 };
 
 onMounted(() => {
   nextTick(() => jumpTo(firstRealIndex));
+  carousel.value?.addEventListener("scroll", handleScroll, { passive: true });
+});
+
+onUnmounted(() => {
+  clearTimeout(settleTimer);
+  carousel.value?.removeEventListener("scroll", handleScroll);
 });
 </script>
 
