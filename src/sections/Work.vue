@@ -10,7 +10,7 @@
       ]"
     >
       <div
-        v-for="(project, index) in loopProjects"
+        v-for="(project, index) in displayProjects"
         :key="`${project.id}-${index}`"
         class="flex-shrink-0 w-full snap-center border rounded-xl shadow-sm p-5 sm:p-6 hover:shadow-md transition overflow-y-auto"
       >
@@ -49,20 +49,23 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick, onMounted, onUnmounted, ref } from "vue";
+import { computed, nextTick, onMounted, onUnmounted, ref } from "vue";
 import { projects } from "@/data/projects";
 
 const carousel = ref<HTMLDivElement | null>(null);
 const isAnimating = ref(false);
 
-// Pad the real list with a clone of the last card up front and a clone of
-// the first card at the end, so the scroll can keep moving in the direction
-// the user clicked instead of jumping backwards to loop.
+// The looping arrows are desktop-only (see the `hidden md:flex` below), so
+// only pad the list with edge clones there. On mobile the swipe gesture
+// scrolls natively with no completion hook to correct a landing on a clone,
+// so it just gets the plain list and hits a natural wall at each end.
+const isDesktop = ref(false);
 const loopProjects = [
   projects[projects.length - 1],
   ...projects,
   projects[0],
 ];
+const displayProjects = computed(() => (isDesktop.value ? loopProjects : projects));
 const firstRealIndex = 1;
 const lastRealIndex = projects.length;
 let currentIndex = firstRealIndex;
@@ -154,26 +157,33 @@ const scroll = async (direction: number) => {
   isAnimating.value = false;
 };
 
-// Touch swipes scroll natively (no JS drives them), so there's no target
-// index to await the way the buttons have. Instead, wait for the browser's
-// momentum/snap to settle, then check whether it landed on a cloned edge
-// card and silently correct to the matching real card — same trick as
-// resolveWrap, just triggered by scroll settling instead of a click.
-let settleTimer: ReturnType<typeof setTimeout> | undefined;
-const handleScroll = () => {
-  if (isAnimating.value) return;
-  clearTimeout(settleTimer);
-  settleTimer = setTimeout(() => resolveWrap(nearestIndex()), 150);
+let mediaQuery: MediaQueryList | undefined;
+
+const applyMode = () => {
+  nextTick(() => {
+    if (isDesktop.value) {
+      currentIndex = firstRealIndex;
+      jumpTo(firstRealIndex);
+    } else if (carousel.value) {
+      carousel.value.scrollLeft = 0;
+    }
+  });
+};
+
+const handleMediaChange = (e: MediaQueryListEvent) => {
+  isDesktop.value = e.matches;
+  applyMode();
 };
 
 onMounted(() => {
-  nextTick(() => jumpTo(firstRealIndex));
-  carousel.value?.addEventListener("scroll", handleScroll, { passive: true });
+  mediaQuery = window.matchMedia("(min-width: 768px)");
+  isDesktop.value = mediaQuery.matches;
+  mediaQuery.addEventListener("change", handleMediaChange);
+  applyMode();
 });
 
 onUnmounted(() => {
-  clearTimeout(settleTimer);
-  carousel.value?.removeEventListener("scroll", handleScroll);
+  mediaQuery?.removeEventListener("change", handleMediaChange);
 });
 </script>
 
