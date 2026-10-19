@@ -15,9 +15,9 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Magnificent 7 Forecasting",
+    title: "SPY Prediction Lab",
     description:
-      "This is a fun iteration and rebuild of a project I created as a senior in college. It's an ongoing project, with new features and analysis actively being added. Using PyTorch, a deep learning framework, it trains an LSTM, a type of neural network built for sequential data like time series, to forecast stock market prices for the \"Mag 7.\" Check it out. I've now built an interactive frontend for it.",
+      "This started as a Bitcoin LSTM I built as a senior in college, grew into a Magnificent 7 forecaster, and is now rebuilt around one question: what can you actually predict about the S&P 500 next week? Every weekend it publishes a likely range for SPY's Friday close, built from VIX, and grades last week's call in public. You can also replay crashes like 2008 and 2020 one week at a time, and see an experiment where four models, including a PyTorch LSTM, try to beat simply guessing \"up.\" None of them do, and the site shows why.",
     url: "https://magnificent-forecast.vercel.app",
   },
   {
